@@ -37,6 +37,44 @@
   <hr />
 
   <!-- TODO #4 - Loop over the search results to display all job fields. -->
+    <div>
+        <h2>Search Results</h2>
+
+        <div th:if="${jobs.isEmpty()}">
+            <p>No results found.</p>
+        </div>
+
+        <div th:unless="${jobs.isEmpty()}">
+            <th:block th:each="job : ${jobs}">
+                <table class="job-listing">
+                    <tr>
+                        <td>ID</td>
+                        <td th:text="${job.id}">ID</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td th:text="${job.name}">Name</td>
+                    </tr>
+                    <tr>
+                        <td>Employer</td>
+                        <td th:text="${job.employer}">Employer</td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td th:text="${job.location}">Location</td>
+                    </tr>
+                    <tr>
+                        <td>Position Type</td>
+                        <td th:text="${job.positionType}">Position Type</td>
+                    </tr>
+                    <tr>
+                        <td>Skill</td>
+                        <td th:text="${job.coreCompetency}">Skill</td>
+                    </tr>
+                </table>
+            </th:block>
+        </div>
+    </div>
 
 </div>
 
