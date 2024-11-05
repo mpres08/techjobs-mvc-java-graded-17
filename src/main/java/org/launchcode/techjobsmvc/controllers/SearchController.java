@@ -24,6 +24,7 @@ public class SearchController {
     @GetMapping(value = "")
     public String search(Model model) {
         model.addAttribute("columns", columnChoices);
+        model.addAttribute("jobs", new ArrayList<>());
         return "search";
     }
 
